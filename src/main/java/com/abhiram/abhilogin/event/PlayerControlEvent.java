@@ -11,6 +11,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 
 public class PlayerControlEvent implements Listener {
@@ -123,5 +124,13 @@ public class PlayerControlEvent implements Listener {
         }
     }
 
-
+    @EventHandler
+    public void onPlayerLeave(PlayerQuitEvent e)
+    {
+        if(Util.getPlayerLoginManager().isPlayerRegistered(e.getPlayer()))
+        {
+            Account account = Util.getPlayerLoginManager().getPlayerAccount(e.getPlayer());
+            account.SetLoginStatus(false);
+        }
+    }
 }
