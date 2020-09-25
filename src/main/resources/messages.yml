@@ -1,0 +1,27 @@
+# -------------------------------------
+# Messages.yml
+# Config the main plugin Messages Here
+# --------------------------------------
+
+# This message will be sent to Players When they Join only if they not logged in.
+Player-login-message:
+  - "&c&m-------------------------------"
+  - "&lHey Please Login."
+  - "&lType your password in the chat."
+  - "&c&m-------------------------------"
+
+# This message will be send to Players When they Join only if they are not registered.
+Player-register-message:
+  - "&m------------------------------"
+  - "&1Hey Please Register."
+  - "&1Type your password in chat."
+  - "&C&l----------------------------"
+
+# This message will be shown when player login success!
+Login-success: "Hey, you have been Logged in!"
+
+#This message will be sent when player Register's
+Register-done-message: "You have successfully Registered!"
+
+# This message will be shown when player Type invalid Password!
+Invalid-Password: "Hey, you have entred invalid password Please Try Again!"

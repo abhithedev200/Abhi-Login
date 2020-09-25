@@ -1,0 +1,11 @@
+# ---------------------
+# Abhi-Login
+# Version 1.0
+# Author: Abhiram
+# ---------------------
+
+# Encrypt Type Which type of encrypition you want plugin to use? by default its MD5 available encryption (MD5,SHA256,SHA512)
+Encrypt-Type: "MD5"
+
+# Disable player movement when player is not registered/not Logged in.
+Disable-Player-Movement: true
