@@ -1,4 +1,8 @@
 main: com.abhiram.abhilogin.Main
 name: Abhi-Login
-version: 1.0
+version: 1.3
 author: Abhiram
+
+commands:
+  changepw:
+    description: This command allow a player to change password!

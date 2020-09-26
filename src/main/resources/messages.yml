@@ -21,10 +21,13 @@ Player-register-message:
 Login-success: "Hey, you have been Logged in!"
 
 #This message will be sent when player Register's
-Register-done-message: "You have successfully Registered!"
+Register-done-message: "You have successfully Registered! Please enter your registered password!"
 
 # This message will be shown when player Type invalid Password!
 Invalid-Password: "Hey, you have entred invalid password Please Try Again!"
 
 # This message will be send to Player when he tries to do command notloggedin/Registred
 No-commands: "Hey sorry but you can't run this command Please Login/Register!"
+
+# This message will be sent to player when player change's password
+Change-password: "Hey, you have changed your password!"
