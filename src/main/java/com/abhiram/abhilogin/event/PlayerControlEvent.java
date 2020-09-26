@@ -42,6 +42,11 @@ public class PlayerControlEvent implements Listener {
         if(Util.getPlayerLoginManager().isPlayerRegistered(e.getPlayer()))
         {
             Account account = Util.getPlayerLoginManager().getPlayerAccount(e.getPlayer());
+            if(account.getLoginstatus())
+            {
+                return;
+            }
+
             if(Util.getPlayerLoginManager().VerifyPassword(e.getMessage(),account.getPassword(),Util.getEncyptionType()))
             {
                 e.setCancelled(true);
