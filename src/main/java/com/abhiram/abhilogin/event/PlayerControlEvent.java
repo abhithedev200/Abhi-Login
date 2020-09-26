@@ -8,10 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.*;
 
 
 public class PlayerControlEvent implements Listener {
@@ -131,6 +128,23 @@ public class PlayerControlEvent implements Listener {
         {
             Account account = Util.getPlayerLoginManager().getPlayerAccount(e.getPlayer());
             account.SetLoginStatus(false);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerCommandrun(PlayerCommandPreprocessEvent e)
+    {
+        if(!Util.getPlayerLoginManager().isPlayerRegistered(e.getPlayer()))
+        {
+            e.setCancelled(true);
+            e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&',Main.getInstance().messageConfig.getConfig().getString("No-commands")));
+            return;
+        }
+
+        if(!Util.getPlayerLoginManager().getPlayerAccount(e.getPlayer()).getLoginstatus())
+        {
+            e.setCancelled(true);
+            e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&',Main.getInstance().messageConfig.getConfig().getString("No-commands")));
         }
     }
 }
