@@ -31,3 +31,6 @@ No-commands: "Hey sorry but you can't run this command Please Login/Register!"
 
 # This message will be sent to player when player change's password
 Change-password: "Hey, you have changed your password!"
+
+# When you have kick player option enabled., this will be the reason for kick
+Kick-reason: "You are kicked for invalid Password!"

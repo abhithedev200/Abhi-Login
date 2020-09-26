@@ -3,7 +3,9 @@ package com.abhiram.abhilogin.event;
 import com.abhiram.abhilogin.Main;
 import com.abhiram.abhilogin.login.Account;
 import com.abhiram.abhilogin.util.Util;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -54,8 +56,19 @@ public class PlayerControlEvent implements Listener {
                 account.SetLoginStatus(true);
                 return;
             }
-            else
-            {
+            else {
+                if (Main.getInstance().config.getConfig().getBoolean("Kick-playeronwrongpassword"))
+                {
+                    final Player p = e.getPlayer();
+                    e.setCancelled(true);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+                        @Override
+                        public void run() {
+                            p.kickPlayer(ChatColor.translateAlternateColorCodes('&',Main.getInstance().messageConfig.getConfig().getString("Kick-reason")));
+                        }
+                    },10);
+                    return;
+                }
                 e.setCancelled(true);
                 e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&',Main.getInstance().messageConfig.getConfig().getString("Invalid-Password")));
                 return;

@@ -35,9 +35,8 @@ public class SpigotUpdater {
         reader.close();
 
 
-        if (version.equalsIgnoreCase(Main.plugin_version))
+        if (!version.equalsIgnoreCase(Main.plugin_version))
         {
-            System.out.println(version);
             return true;
         }
         return false;

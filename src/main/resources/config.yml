@@ -9,3 +9,6 @@ Encrypt-Type: "MD5"
 
 # Disable player movement when player is not registered/not Logged in.
 Disable-Player-Movement: true
+
+# do you want to kick player when they enter wrong password?
+Kick-playeronwrongpassword: true

@@ -1,6 +1,6 @@
 main: com.abhiram.abhilogin.Main
 name: Abhi-Login
-version: 1.3
+version: 1.6
 author: Abhiram
 
 commands:
