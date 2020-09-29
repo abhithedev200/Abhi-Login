@@ -6,3 +6,4 @@ TODO
 - add MySQL support
 - kick player on wrong password option - Done
 - Account limit for ip
+- Session Support - Done!
