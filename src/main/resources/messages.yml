@@ -34,3 +34,6 @@ Change-password: "Hey, you have changed your password!"
 
 # When you have kick player option enabled., this will be the reason for kick
 Kick-reason: "You are kicked for invalid Password!"
+
+# This will be the message send to player when player auto-logs in by session
+Session-Login: "&2Hey you have been auto Logged in by Session!"

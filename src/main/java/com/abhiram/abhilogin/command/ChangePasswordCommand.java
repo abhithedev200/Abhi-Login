@@ -34,6 +34,14 @@ public class ChangePasswordCommand implements CommandExecutor {
         account.SetPassword(new Encrypt(args[0],Util.getEncyptionType()).getEncryptedPassword());
         PlayerData playerData = new PlayerData(Main.getInstance(),account.getUuid());
         playerData.getConfig().set("password",account.getPassword());
+        try
+        {
+            playerData.save();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getInstance().messageConfig.getConfig().getString("Change-password")));
         return true;
     }

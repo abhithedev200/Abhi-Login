@@ -2,6 +2,7 @@ package com.abhiram.abhilogin.event;
 
 import com.abhiram.abhilogin.Main;
 import com.abhiram.abhilogin.login.Account;
+import com.abhiram.abhilogin.login.Session;
 import com.abhiram.abhilogin.util.Util;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -54,6 +55,12 @@ public class PlayerControlEvent implements Listener {
                 e.setCancelled(true);
                 e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&',Main.getInstance().messageConfig.getConfig().getString("Login-success")));
                 account.SetLoginStatus(true);
+
+                Session ses = new Session(e.getPlayer().getAddress());
+
+                int Intervel = Main.getInstance().config.getConfig().getInt("Session-Interval");
+
+                Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(),ses, 20 * Intervel);
                 return;
             }
             else {
