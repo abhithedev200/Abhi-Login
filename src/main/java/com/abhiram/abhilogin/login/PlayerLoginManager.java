@@ -76,4 +76,9 @@ public class PlayerLoginManager {
 
         return null;
     }
+
+    public ArrayList<Account> getAccounts()
+    {
+        return this.accounts;
+    }
 }

@@ -21,6 +21,10 @@ public class SessionListener implements Listener {
         {
            if(Main.getInstance().config.getConfig().getBoolean("Session"))
            {
+               if(!Util.getPlayerLoginManager().isPlayerRegistered(e.getPlayer()))
+               {
+                   return;
+               }
                e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&',Main.getInstance().messageConfig.getConfig().getString("Session-Login")));
                Util.getPlayerLoginManager().getPlayerAccount(e.getPlayer()).SetLoginStatus(true);
            }

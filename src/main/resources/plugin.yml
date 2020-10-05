@@ -6,3 +6,5 @@ author: Abhiram
 commands:
   changepw:
     description: This command allow a player to change password!
+  unregister:
+    description: A command that allow server admins to unregister a Player!
