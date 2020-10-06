@@ -1,10 +1,10 @@
 package com.abhiram.abhilogin;
 
+import com.abhiram.abhilogin.api.bstats.Metrics;
 import com.abhiram.abhilogin.command.ChangePasswordCommand;
 import com.abhiram.abhilogin.command.UnRegisterCommand;
 import com.abhiram.abhilogin.event.PlayerControlEvent;
 import com.abhiram.abhilogin.event.SessionListener;
-import com.abhiram.abhilogin.event.Test;
 import com.abhiram.abhilogin.file.Config;
 import com.abhiram.abhilogin.file.MessageConfig;
 import com.abhiram.abhilogin.util.SpigotUpdater;
@@ -15,7 +15,7 @@ public class Main extends JavaPlugin {
     private static Main instance;
     public Config config;
     public MessageConfig messageConfig;
-    public static String plugin_version = "1.8";
+    public static String plugin_version = "1.9";
 
     @Override
     public void onEnable()
@@ -28,6 +28,7 @@ public class Main extends JavaPlugin {
         this.getCommand("changepw").setExecutor(new ChangePasswordCommand());
         this.getCommand("unregister").setExecutor(new UnRegisterCommand());
         new SpigotUpdater().Check();
+        new Metrics(this,9042);
     }
 
     public static Main getInstance()
