@@ -1,5 +1,7 @@
 package com.abhiram.abhilogin.encrypt;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.security.MessageDigest;
 
 public class Encrypt {
@@ -17,6 +19,9 @@ public class Encrypt {
                 break;
             case SHA256:
                 encryptedPassword = toSHA256(password);
+                break;
+            case BCRYPT:
+                encryptedPassword = toBcrypt(password);
                 break;
         }
     }
@@ -85,6 +90,14 @@ public class Encrypt {
 
         return null;
     }
+
+
+    private String toBcrypt(String password)
+    {
+        return BCrypt.hashpw(password,BCrypt.gensalt());
+    }
+
+
     public String getEncryptedPassword()
     {
         return this.encryptedPassword;

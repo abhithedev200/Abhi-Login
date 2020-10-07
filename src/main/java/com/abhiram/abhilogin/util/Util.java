@@ -32,6 +32,8 @@ public class Util {
                 return EncryptType.SHA256;
             case "SHA512":
                 return EncryptType.SHA512;
+            case "BCRYPT":
+                return EncryptType.BCRYPT;
         }
 
         Log("Hey, invalid Encryption Type found in config.yml using default EncryptionType (MD5)");

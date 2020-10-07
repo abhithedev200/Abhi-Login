@@ -4,7 +4,7 @@
 # Author: Abhiram
 # ---------------------
 
-# Encrypt Type Which type of encrypition you want plugin to use? by default its MD5 available encryption (MD5,SHA256,SHA512)
+# Encrypt Type Which type of encrypition you want plugin to use? by default its MD5 available encryption (MD5,SHA256,SHA512,BCRYPT)
 Encrypt-Type: "MD5"
 
 # Disable player movement when player is not registered/not Logged in.

@@ -8,6 +8,7 @@ import com.abhiram.abhilogin.util.Util;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -22,6 +23,15 @@ public class PlayerLoginManager {
 
     public Boolean VerifyPassword(String password, String hash, EncryptType encryptType)
     {
+        if(encryptType == EncryptType.BCRYPT)
+        {
+            if(BCrypt.checkpw(password,hash))
+            {
+                return true;
+            }
+
+            return false;
+        }
         return new Encrypt(password,encryptType).getEncryptedPassword().equalsIgnoreCase(hash);
     }
 
