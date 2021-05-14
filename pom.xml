@@ -35,6 +35,9 @@
                                     <pattern>org.mindrot.jbcrypt</pattern>
                                     <shadedPattern>com.abhiram.abhilogin.api.jbcrypt</shadedPattern>
                                 </relocation>
+                                <excludes>
+                                    <exclude>com.comphenix.*</exclude>
+                                </excludes>
                             </relocations>
                         </configuration>
                     </execution>
@@ -56,6 +59,12 @@
         <repository>
             <id>dmulloy2-repo</id>
             <url>https://repo.dmulloy2.net/nexus/repository/public/</url>
+        </repository>
+
+        <!-- CodeMc -->
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.org/repository/maven-public/</url>
         </repository>
 
     </repositories>
@@ -81,6 +90,13 @@
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
+        </dependency>
+
+        <!--Common component for contacting the Mojang API-->
+        <dependency>
+            <groupId>com.github.games647</groupId>
+            <artifactId>craftapi</artifactId>
+            <version>0.2</version>
         </dependency>
     </dependencies>
 

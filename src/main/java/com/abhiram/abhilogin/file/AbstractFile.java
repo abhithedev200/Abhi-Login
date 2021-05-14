@@ -8,8 +8,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class AbstractFile {
-    protected Main plugin;
+public class AbstractFile{
+    private Main plugin;
     private File file;
     protected FileConfiguration configuration;
     protected Boolean save;
