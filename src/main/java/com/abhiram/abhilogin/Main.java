@@ -18,7 +18,7 @@ public class Main extends JavaPlugin {
     private static Main instance;
     public Config config;
     public MessageConfig messageConfig;
-    public static String plugin_version = "2.0";
+    public static final String plugin_version = "2.1";
 
     @Override
     public void onEnable()
